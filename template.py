@@ -8,6 +8,7 @@ def read_file():
 def main():
 	read_list = read_file()
 	for item in read_list:
+		...
 
 
 if __name__ == '__main__':
