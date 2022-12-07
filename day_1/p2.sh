@@ -1,0 +1,1 @@
+cat input | tr "\n\n" "++" | sed 's/++/\n/g' | awk -F "+" '{for(i=1;i<=NF;i++) t+=$i; print t; t=0}' | sort -r | head -3 | tr "\n" " " | awk '{print $1 + $2 + $3}'
