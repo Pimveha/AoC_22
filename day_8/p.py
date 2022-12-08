@@ -42,26 +42,10 @@ def main():
 
 
 			# p2
-			# left of tree
-			# relational trees
-			t = read_list[x][y]
 			trees_to_the_left = read_list[x][:y]
 			trees_to_the_right = read_list[x][y:][1:]
 			trees_to_the_top = [read_list[i][y] for i in range(x)]
 			trees_to_the_bottom = [read_list[i][y] for i in range(x + 1, len(read_list))]
-
-			# print(trees_to_the_top)
-			# print(trees_to_the_left, t, trees_to_the_right)
-			# print(trees_to_the_bottom)
-
-
-			# for i in trees_to_the_top:
-			# 	print(" "*len(trees_to_the_left), i)
-			# print("".join([str(tree) for tree in trees_to_the_left]), t, "".join([str(tree) for tree in trees_to_the_right]))
-			# for i in trees_to_the_bottom:
-			# 	print(" "*len(trees_to_the_left), i)
-
-
 
 			left_cnt = right_cnt = top_cnt = bottom_cnt = 0
 			# for i, tree in enumerate(trees_to_the_left[::-1], start=1):
@@ -74,31 +58,21 @@ def main():
 				left_cnt += 1 
 				if tree >= t:
 					break
-
-
-
+					
 			for tree in trees_to_the_right:
 				right_cnt += 1 
 				if tree >= t:
 					break
-
-
-
+					
 			for tree in trees_to_the_top[::-1]:
 				top_cnt += 1 
 				if tree >= t:
 					break
 
-
-
 			for tree in trees_to_the_bottom:
 				bottom_cnt += 1 
 				if tree >= t:
 					break
-
-
-
-
 
 			# for i in trees_to_the_top:
 			# 	print(" "*len(trees_to_the_left), i)
@@ -108,19 +82,6 @@ def main():
 
 			view_score = left_cnt * right_cnt * top_cnt * bottom_cnt
 			score_list.append(view_score)
-			# print(view_score)
-
-			# print("left:", left_cnt)
-			# print("right:", right_cnt)
-			# print("top", top_cnt)
-			# print("bottem", bottom_cnt)
-			# print()
-			# print()
-			# print()
-			# print(trees_to_the_top)
-
-
-
 
 	print(c)
 	print(max(score_list))
